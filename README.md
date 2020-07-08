@@ -1,5 +1,5 @@
-# Recurrent neural-linear posterior sampling
-Paulo Rauber, Aditya Ramesh, Juergen Schmidhuber
+# Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits
+Code associated with the paper "Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits".
 
 ## Instructions
 
