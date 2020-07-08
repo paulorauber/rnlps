@@ -44,11 +44,14 @@ python3 analyse.py experiment_folder/ --return
 
 ## Dependencies
 
+- tmux (for multirun.py)
+
+#### Python packages -
+
 - matplotlib
-- networkx
 - numpy
 - pandas
 - scipy
 - seaborn
-- tensorflow
+- tensorflow-1.x
  
