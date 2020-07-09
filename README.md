@@ -38,7 +38,7 @@ python3 create_summary.py experiment_folder/
 Create a plot comparing the regret/return of different policies:
 
 ```bash
-python3 regret_analysis.py experiment_folder/ --regret
+python3 regret_analysis.py experiment_folder/
 ```
 
 ## Dependencies
