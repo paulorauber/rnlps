@@ -21,6 +21,9 @@ python3 rnlps/scripts/hgrid.py experiment_folder/
 Run an individual experiment on a folder with a config file:
 ```bash
 python3 rnlps/scripts/run.py experiment_folder/single_trial/
+
+# Try one of the example configurations
+python3 rnlps/scripts/run.py rnlps/examples/example_configs/sinusoidal_bernoulli/2/
 ```
 
 Run multiple experiments in parallel with 10 jobs (requires tmux):
