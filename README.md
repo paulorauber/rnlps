@@ -35,6 +35,13 @@ Create a csv file that summarizes the return (mean and standard deviation over i
 python3 create_summary.py experiment_folder/
 ```
 
+Create a plot to analyse the sensitivity of neural policies across hyperparameters:
+
+```bash
+python3 hp_sensitivity_plot.py experiment_folder/
+```
+
+
 Create a plot comparing the regret of the different policies:
 
 ```bash
