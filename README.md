@@ -1,4 +1,4 @@
-# Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits
+# Recurrent neural-linear posterior sampling 
 
 This software supplements the paper "Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits".
 
@@ -51,9 +51,6 @@ python3 regret_analysis.py experiment_folder/
 ## Dependencies
 
 - tmux (for multirun.py)
-
-#### Python packages -
-
 - matplotlib
 - numpy
 - pandas
