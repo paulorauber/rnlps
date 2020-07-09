@@ -1,4 +1,7 @@
-""" Runs multiple jobs in parallel in a tmux session. """
+"""
+    Runs multiple jobs in parallel in a tmux session.
+
+"""
 
 import os
 import time

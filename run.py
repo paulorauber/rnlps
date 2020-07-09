@@ -1,5 +1,8 @@
-""" Runs a single experiment for a particular configuration of bandit and
-    policy settings. Saves results in trial.csv """
+"""
+    Runs a single experiment for a particular configuration of bandit and
+    policy settings. Saves results in trial.csv. 
+
+"""
 
 import os
 import argparse
@@ -7,11 +10,16 @@ import json
 import numpy as np
 import pandas as pd
 
-from rnlps.bandits import bandits
-from rnlps.policies import policies
+from rnlps.non_contextual_bandits import non_contextual_bandits
+from rnlps.contextual_bandits import contextual_bandits
+from rnlps.linear_bandits import linear_bandits
+
+from rnlps.non_contextual_policies import non_contextual_policies
+from rnlps.contextual_policies import contextual_policies
+from rnlps.contextual_linear_policies import contextual_linear_policies
 
 def main():
-    """ Example configuration file:
+    """ Example configuration file (also see the output of hgrid.py):
     {
     "bandit": "StationaryBernoulliBandit",
     "bandit_parameters": {"means": [0.25, 0.5, 0.75], "seed": 0},
@@ -30,8 +38,15 @@ def main():
     config = json.load(f)
     f.close()
 
-    bandit = bandits[config['bandit']](**config['bandit_parameters'])
-    policy = policies[config['policy']](bandit, **config['policy_parameters'])
+    if config['bandit'] in non_contextual_bandits.keys():
+        bandit = non_contextual_bandits[config['bandit']](**config['bandit_parameters'])
+        policy = non_contextual_policies[config['policy']](bandit, **config['policy_parameters'])
+    elif config['bandit'] in contextual_bandits.keys():
+        bandit = contextual_bandits[config['bandit']](**config['bandit_parameters'])
+        policy = contextual_policies[config['policy']](bandit, **config['policy_parameters'])
+    else:
+        bandit = linear_bandits[config['bandit']](**config['bandit_parameters'])
+        policy = contextual_linear_policies[config['policy']](bandit, **config['policy_parameters'])
 
     trial_length = config['trial_length']
 
@@ -40,6 +55,7 @@ def main():
     df = pd.DataFrame({'Pull': np.arange(trial_length) + 1,
                        'Return': trial.cumulative_rewards(),
                        'Arm_Pulled': trial.arms,
+                       'Regret': trial.cumulative_regret(),
                        'Policy': repr(policy)})
 
     df.to_csv(os.path.join(args.directory, 'trial.csv'), index=False)
