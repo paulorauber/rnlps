@@ -1,5 +1,8 @@
 # Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits
-Code associated with the paper "Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits".
+
+This software supplements the paper "Recurrent Neural-Linear Posterior Sampling for Non-Stationary Contextual Bandits".
+
+The implementation focuses on clarity and flexibility rather than computational efficiency.
 
 ## Instructions
 
@@ -15,7 +18,7 @@ python3 hgrid.py experiment_folder/
 
 Run an individual experiment on a folder with a config file:
 ```bash
-python3 run.py experiment_folder/single_experiment/
+python3 run.py experiment_folder/single_trial/
 ```
 
 Run multiple experiments in parallel with 10 jobs (requires tmux):
@@ -35,11 +38,7 @@ python3 create_summary.py experiment_folder/
 Create a plot comparing the regret/return of different policies:
 
 ```bash
-# Regret
-python3 analyse.py experiment_folder/ --regret
-
-# Return
-python3 analyse.py experiment_folder/ --return
+python3 regret_analysis.py experiment_folder/ --regret
 ```
 
 ## Dependencies
