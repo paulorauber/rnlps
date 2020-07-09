@@ -100,7 +100,7 @@ class BaseOracle(Policy):
         Policy.__init__(self, bandit)
 
     def select(self, trial):
-        return self.bandit.best_arms()[0]
+        return int(self.bandit.best_arms()[0])
 
     def __repr__(self):
         return 'Oracle()'
