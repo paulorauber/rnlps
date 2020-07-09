@@ -14,9 +14,9 @@ class StationaryContextualBandit:
 
         self.random_state = np.random.RandomState(seed)
 
-        if os.path.isdir("datasets/" + dataset):
-            self.X = np.load("datasets/" + dataset + "/X.npy")
-            self.targets = np.load("datasets/" + dataset + "/y.npy")
+        if os.path.isdir("rnlps/datasets/" + dataset):
+            self.X = np.load("rnlps/datasets/" + dataset + "/X.npy")
+            self.targets = np.load("rnlps/datasets/" + dataset + "/y.npy")
         else :
             raise Exception("Dataset does not exist. Check the path.")
 
@@ -67,9 +67,9 @@ class FlippingContextualBandit:
         self.random_state = np.random.RandomState(seed)
 
 
-        if os.path.isdir("datasets/" + dataset):
-            self.X = np.load("datasets/" + dataset + "/X.npy")
-            self.targets = np.load("datasets/" + dataset + "/y.npy")
+        if os.path.isdir("rnlps/datasets/" + dataset):
+            self.X = np.load("rnlps/datasets/" + dataset + "/X.npy")
+            self.targets = np.load("rnlps/datasets/" + dataset + "/y.npy")
         else :
             raise Exception("Dataset does not exist. Check the path.")
 

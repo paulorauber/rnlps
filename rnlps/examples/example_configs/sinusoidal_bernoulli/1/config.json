@@ -1,0 +1,1 @@
+{"bandit": "SinusoidalBernoulliBandit", "trial_length": 4096, "bandit_parameters": {"step_size": 0.19634954084936207, "n_arms": 5, "seed": 0}, "policy_parameters": {"n_units": [32, 32, 32], "learning_rate": 0.01, "regularise_lambda": 0.001, "epochs": 16, "train_every": 32, "std_targets": 0.1, "std_weights": 0.5, "verbose": false, "seed": 9}, "policy": "ThompsonRecurrentNetwork"}

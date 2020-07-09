@@ -1,0 +1,1 @@
+{"bandit_parameters": {"dataset": "mnist_4096", "seed": 0, "half_period": 64}, "policy": "ThompsonRecurrentNetwork", "policy_parameters": {"n_units": [32, 32, 32], "learning_rate": 0.01, "regularise_lambda": 0.001, "epochs": 64, "train_every": 32, "std_targets": 0.3, "std_weights": 1.0, "verbose": false, "seed": 10}, "bandit": "FlippingContextualBandit", "trial_length": 4095}

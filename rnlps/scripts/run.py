@@ -1,6 +1,6 @@
 """
     Runs a single experiment for a particular configuration of bandit and
-    policy settings. Saves results in trial.csv. 
+    policy settings. Saves results in trial.csv.
 
 """
 
@@ -10,13 +10,13 @@ import json
 import numpy as np
 import pandas as pd
 
-from rnlps.non_contextual_bandits import non_contextual_bandits
-from rnlps.contextual_bandits import contextual_bandits
-from rnlps.linear_bandits import linear_bandits
+from rnlps.environments.non_contextual_bandits import non_contextual_bandits
+from rnlps.environments.contextual_bandits import contextual_bandits
+from rnlps.environments.linear_bandits import linear_bandits
 
-from rnlps.non_contextual_policies import non_contextual_policies
-from rnlps.contextual_policies import contextual_policies
-from rnlps.contextual_linear_policies import contextual_linear_policies
+from rnlps.policies.non_contextual_policies import non_contextual_policies
+from rnlps.policies.contextual_policies import contextual_policies
+from rnlps.policies.contextual_linear_policies import contextual_linear_policies
 
 def main():
     """ Example configuration file (also see the output of hgrid.py):

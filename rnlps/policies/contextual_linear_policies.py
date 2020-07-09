@@ -9,9 +9,9 @@ import contextlib
 from termcolor import cprint
 from math import log
 
-from rnlps.base import Trial, Policy
-from rnlps.base import BaseOracle, BaseFixed, BaseRandom
-from rnlps.base import BaseThompsonRecurrentNetwork, BaseThompsonSinFeedforwardNetwork
+from rnlps.policies.base import Trial, Policy
+from rnlps.policies.base import BaseOracle, BaseFixed, BaseRandom
+from rnlps.policies.base import BaseThompsonRecurrentNetwork, BaseThompsonSinFeedforwardNetwork
 
 
 @contextlib.contextmanager

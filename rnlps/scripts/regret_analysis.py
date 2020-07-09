@@ -32,9 +32,9 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from rnlps.non_contextual_bandits import non_contextual_bandits
-from rnlps.contextual_bandits import contextual_bandits
-from rnlps.linear_bandits import linear_bandits
+from rnlps.environments.non_contextual_bandits import non_contextual_bandits
+from rnlps.environments.contextual_bandits import contextual_bandits
+from rnlps.environments.linear_bandits import linear_bandits
 
 sns.set(context='paper', style='darkgrid', font_scale=3, rc={'legend.frameon':False, 'lines.linewidth':6.0})
 
