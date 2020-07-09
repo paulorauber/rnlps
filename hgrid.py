@@ -1,6 +1,6 @@
 """
 
-Creates config files for experiments and hyperparamter grid search. 
+Creates config files for experiments and hyperparamter grid search.
 
 """
 
@@ -26,7 +26,7 @@ CfgThompsonRNN = namedtuple('ThompsonRecurrentNetwork',
                                 'train_every', 'std_targets', 'std_weights',
                                 'verbose', 'seed'])
 
-# Neural-linear
+# Neural-linear with sinusoidal units
 CfgThompsonSinNN = namedtuple('ThompsonSinFeedforwardNetwork',
                            ['order', 'periods', 'periods_dim', 'n_units',
                             'learning_rate', 'regularise_lambda','epochs', 'train_every',
@@ -34,8 +34,13 @@ CfgThompsonSinNN = namedtuple('ThompsonSinFeedforwardNetwork',
 
 def main():
     # Bandit settings - problem type and specific instance.
-    bandit = "SinusoidalBernoulliBandit"
-    bandit_parameters = {"n_arms": 5, "step_size": (2*np.pi/32), "seed": 0}
+
+    bandit = "FlippingGaussianBandit"
+    bandit_parameters = {"means": [0.1, 0.9, 0.8, 0.2, 0.3, 0.7, 0.6, 0.4] , "half_period": 10, "std": 0.1, "seed": 0}
+
+    # Another problem setting -
+    # bandit = "SinusoidalBernoulliBandit"
+    # bandit_parameters = {"n_arms": 5, "step_size": (2*np.pi/32), "seed": 0}
 
     # Number of interactions
     trial_length = 4096
@@ -78,11 +83,11 @@ def main():
 
     # Add SW_UCB & D_UCB
 
-    configs.append(CfgSW_UCB(tau=[50, 75, 100],
+    configs.append(CfgSW_UCB(tau=[25, 50, 75],
                                   ksi=[0.5],
                                   seed=seeds))
 
-    configs.append(CfgD_UCB(gamma = [0.99, 0.995, 0.999],
+    configs.append(CfgD_UCB(gamma = [0.95, 0.98, 0.99],
                                   ksi=[0.5],
                                   seed=seeds))
 
