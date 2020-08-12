@@ -57,8 +57,8 @@ python3 rnlps/scripts/regret_analysis.py experiment_folder/
 
 - tmux (for multirun.py)
 - matplotlib
-- numpy
+- numpy(1.16.3)
 - pandas
 - scipy
 - seaborn
-- tensorflow-1.x
+- tensorflow(1.13.1)
